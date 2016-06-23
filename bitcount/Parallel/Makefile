@@ -13,7 +13,7 @@ FILE := pt.c bitcnt_1_parallel.c bitcnt_2.c bitcnt_3.c bitcnt_4.c \
 all: $(OBJS)
 
 bitcnts_parallel: $(FILE) $(PARAMS)
-	$(CC) $(CFLAGS) $(FILE) -o $@
+	$(CC) $(FILE) -o $@ $(CFLAGS)
 
 $(PARAMS):
 	./gen_defs.sh $(PARAMS) $(PROCESSORS)

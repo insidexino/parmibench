@@ -14,7 +14,7 @@ OBJS := sha
 all: $(OBJS)
 
 sha: sha_driver.c sha.c $(PARAMS)
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CC) $^ -o $@ $(CFLAGS)
 
 $(PARAMS):
 	./gen_defs.sh $(PARAMS) $(PROCESSORS)

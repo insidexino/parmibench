@@ -11,7 +11,7 @@ SRCS := patricia_tool.c patricia_parallel.c patricia_test.c
 all: $(OBJS)
 
 patricia_parallel: $(SRCS) $(PARAMS)
-	$(CC) $(CFLAGS) $(SRCS) -o $@
+	$(CC) $(SRCS) -o $@ $(CFLAGS)
 
 $(PARAMS):
 	./gen_defs.sh $(PARAMS) $(PROCESSORS)

@@ -9,13 +9,13 @@ OBJS := dijkstra_parallel_mqueue dijkstra_parallel_squeue dijkstra_allpair
 all: $(OBJS)
 
 dijkstra_parallel_mqueue: dijkstra_parallel_mqueue.c $(PARAMS)
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $< -o $@ $(CFLAGS)
 
 dijkstra_parallel_squeue: dijkstra_parallel_squeue.c $(PARAMS)
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $< -o $@ $(CFLAGS)
 
 dijkstra_allpair: dijkstra_allpair.c $(PARAMS)
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $< -o $@ $(CFLAGS)
 
 $(PARAMS):
 	./gen_defs.sh $(PARAMS) $(PROCESSORS)

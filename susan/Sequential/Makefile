@@ -1,12 +1,12 @@
 CC := $(CROSS_COMPILE)gcc
-CFLAGS := -O2 -lm
+CFLAGS := -lm -O2 
 
 OBJS := susan
 
 all: $(OBJS)
 
 susan: susan.c
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CC) $^ -o $@ $(CFLAGS)
 
 clean:
 	rm -rf $(OBJS) output*
